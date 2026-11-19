@@ -46,8 +46,16 @@ export function Header() {
           Book a consultation
         </BookingButton>
         <Dialog.Root open={open} onOpenChange={setOpen}>
-          <Dialog.Trigger className="menu-trigger" aria-label="Open navigation" aria-expanded={open}>
-            <span className="hamburger-lines" aria-hidden="true"><span /><span /><span /></span>
+          <Dialog.Trigger
+            className="menu-trigger"
+            aria-label="Open navigation"
+            aria-expanded={open}
+          >
+            <span className="hamburger-lines" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
           </Dialog.Trigger>
           <Dialog.Portal>
             <Dialog.Overlay className="menu-overlay" />
@@ -68,7 +76,10 @@ export function Header() {
                 {navigation.map(([label, url], i) => (
                   <Link
                     prefetch={false}
-                    className="mobile-link" style={{ "--link-delay": `${i * 45 + 90}ms` } as CSSProperties}
+                    className="mobile-link"
+                    style={
+                      { "--link-delay": `${i * 45 + 90}ms` } as CSSProperties
+                    }
                     key={url}
                     href={url}
                     onClick={() => setOpen(false)}
@@ -78,7 +89,28 @@ export function Header() {
                   </Link>
                 ))}
               </nav>
-              <div className="mobile-menu-note"><span className="eyebrow">LET’S MAKE SOMETHING PERSONAL</span><p>Small details.<br />Made with heart.</p><div className="mobile-menu-contact"><a href={site.phoneHref}><Phone size={17} />Call the studio</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle size={17} />WhatsApp</a></div></div>
+              <div className="mobile-menu-note">
+                <span className="eyebrow">LET’S MAKE SOMETHING PERSONAL</span>
+                <p>
+                  Small details.
+                  <br />
+                  Made with heart.
+                </p>
+                <div className="mobile-menu-contact">
+                  <a href={site.phoneHref}>
+                    <Phone size={17} />
+                    Call the studio
+                  </a>
+                  <a
+                    href={site.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageCircle size={17} />
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>

@@ -88,7 +88,9 @@ export default function ServiceCatalog() {
         </div>
       </div>
       <p className="service-result-count" role="status">
-        {filtered.length ? "Explore a service for your next little idea" : "Try another search or category"}
+        {filtered.length
+          ? "Explore a service for your next little idea"
+          : "Try another search or category"}
       </p>
       {filtered.length ? (
         <ServiceGrid items={filtered} />

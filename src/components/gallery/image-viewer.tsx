@@ -256,8 +256,7 @@ export function ImageViewer({ photos }: { photos: Photo[] }) {
               </div>
             </div>
             <p className="lightbox-caption">
-              {photos[index].caption} ·{" "}
-              {Math.round(zoom * 100)}%
+              {photos[index].caption} · {Math.round(zoom * 100)}%
             </p>
           </Dialog.Content>
         </Dialog.Portal>
