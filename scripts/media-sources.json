@@ -1,0 +1,126 @@
+{
+  "images": [
+    {
+      "id": "green-bus-front",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/C1I-jtGvnEh_01.webp"
+    },
+    {
+      "id": "green-bus-rear",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/C1I-jtGvnEh_03.webp"
+    },
+    {
+      "id": "bus-interior",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/C1I-jtGvnEh_05.webp"
+    },
+    {
+      "id": "portrait-sketching",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/C29F7jXvFOU_01.webp"
+    },
+    {
+      "id": "modern-home",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/C5i5lMGvaS-_01.webp"
+    },
+    {
+      "id": "home-lighting",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/C5i5lMGvaS-_04.webp"
+    },
+    {
+      "id": "home-evening",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/C5i5lMGvaS-_06.webp"
+    },
+    {
+      "id": "blue-bus-front",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/Cw0SxV_yatU_01.webp"
+    },
+    {
+      "id": "blue-bus-side",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/Cw0SxV_yatU_03.webp"
+    },
+    {
+      "id": "blue-bus-scale",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/Cw0SxV_yatU_06.webp"
+    },
+    {
+      "id": "vintage-bus",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/CyagXUBvP79_01.webp"
+    },
+    {
+      "id": "vintage-bus-rear",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/CyagXUBvP79_04.webp"
+    },
+    {
+      "id": "miniature-train",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DCitO6vyrYV_01.webp"
+    },
+    {
+      "id": "train-carriages",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DCitO6vyrYV_03.webp"
+    },
+    {
+      "id": "temple-maker",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DdqIYtroBP3_01.webp"
+    },
+    {
+      "id": "temple-model",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DdqIYtroBP3_03.webp"
+    },
+    {
+      "id": "om-sakthi-bus",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DW52mDUk42Q_01.webp"
+    },
+    {
+      "id": "om-sakthi-profile",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DW52mDUk42Q_03.webp"
+    },
+    {
+      "id": "campus-model",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DXOc1JdEwQp.webp"
+    },
+    {
+      "id": "maker-and-bus",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DYV-xoXT_KH.webp"
+    }
+  ],
+  "videos": [
+    {
+      "id": "blue-bus-showcase",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/highlights/2004/2025-10-06_13-58-07_3737286488628301480_hd.mp4"
+    },
+    {
+      "id": "illuminated-home",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/highlights/Highlights/2023-12-26_16-31-04_3266259543218001627.mp4"
+    },
+    {
+      "id": "temple-presentation",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/highlights/ராமேஸ்வரம்/2026-09-24_10-30-29_3993028080041882244_hd.mp4"
+    },
+    {
+      "id": "tiny-vehicle",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/C31YhIhvBXK_hd.mp4"
+    },
+    {
+      "id": "classic-bus",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/CsTCetJsh5t_hd.mp4"
+    },
+    {
+      "id": "landscape-diorama",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/Cy-_6QePgO-_hd.mp4"
+    },
+    {
+      "id": "vintage-bus-details",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/CydOeP7vYIS_hd.mp4"
+    },
+    {
+      "id": "house-in-progress",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/Cyppcd_Pchz_hd.mp4"
+    },
+    {
+      "id": "bus-body-making",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DCgcgF1SAvm_hd.mp4"
+    },
+    {
+      "id": "at-the-workbench",
+      "original": "public/tinydots_miniatures1 (Tinydots_miniatures)/posts/DJQ4-AwSqWQ_hd.mp4"
+    }
+  ]
+}
