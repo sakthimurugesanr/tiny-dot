@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChevronRight, House } from "lucide-react";
 export function PageHeading({
   eyebrow,
   title,
@@ -16,17 +17,19 @@ export function PageHeading({
 }) {
   return (
     <section className="page-hero">
-      <div className="breadcrumbs">
-        <Link href="/">Home</Link>
-        <span>/</span>
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <Link href="/">
+          <House size={14} aria-hidden="true" /> Home
+        </Link>
+        <ChevronRight size={14} aria-hidden="true" />
         {section && (
           <>
             <Link href={`/${section.toLowerCase()}`}>{section}</Link>
-            <span>/</span>
+            <ChevronRight size={14} aria-hidden="true" />
           </>
         )}
-        <span>{eyebrow}</span>
-      </div>
+        <span aria-current="page">{eyebrow}</span>
+      </nav>
       <span className="eyebrow">{eyebrow}</span>
       <h1>
         {title} {accent && <em>{accent}</em>}

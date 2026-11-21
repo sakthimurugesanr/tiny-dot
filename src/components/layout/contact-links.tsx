@@ -1,4 +1,5 @@
-import { Phone, Video, Camera, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
+import { InstagramIcon, YoutubeIcon } from "@/components/ui/social-icons";
 import { site } from "@/config/site";
 export function ContactLinks() {
   return (
@@ -6,28 +7,28 @@ export function ContactLinks() {
       <a href={site.phoneHref}>
         <Phone size={20} />
         <span>
-          <small>CALL FOR CUSTOM ORDERS</small>
+          <small>Call for custom orders</small>
           <strong>{site.phone}</strong>
         </span>
       </a>
       <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
         <MessageCircle size={20} />
         <span>
-          <small>WHATSAPP ENQUIRIES</small>
+          <small>Whatsapp enquiries</small>
           <strong>Discuss your miniature</strong>
         </span>
       </a>
       <a href={site.youtube} target="_blank" rel="noopener noreferrer">
-        <Video size={20} />
+        <YoutubeIcon size={20} />
         <span>
-          <small>YOUTUBE SHORTS</small>
+          <small>Youtube shorts</small>
           <strong>@tinydotsminiatures3747</strong>
         </span>
       </a>
       <a href={site.instagram} target="_blank" rel="noopener noreferrer">
-        <Camera size={20} />
+        <InstagramIcon size={20} />
         <span>
-          <small>INSTAGRAM</small>
+          <small>Instagram</small>
           <strong>@tinydots_miniatures1</strong>
         </span>
       </a>

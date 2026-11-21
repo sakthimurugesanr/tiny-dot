@@ -32,10 +32,10 @@ const PhotoCard = memo(function PhotoCard({
       <span className="work-photo-caption">
         <small>
           {item.category === "architecture"
-            ? "HOMES & ARCHITECTURE"
+            ? "Homes & architecture"
             : item.category === "vehicles"
-              ? "VEHICLE MINIATURES"
-              : "CRAFT & MAKING"}
+              ? "Vehicle miniatures"
+              : "Craft & making"}
         </small>
         <strong>{item.title}</strong>
       </span>
@@ -117,7 +117,7 @@ export function WorkGallery({
           <p className="work-count" role="status">
             {preview
               ? "A few favourites from the workbench"
-              : "Handmade by TINY DOT’S"}
+              : "Handmade by Tiny Dot’s"}
           </p>
           <div
             className={`work-mosaic ${preview ? "work-mosaic-preview" : ""}`}
@@ -172,7 +172,7 @@ const FilmCard = memo(function FilmCard({
         <span className="film-play">
           <Play size={21} fill="currentColor" />
         </span>
-        <span className="film-kind">STUDIO FILM</span>
+        <span className="film-kind">Studio film</span>
       </div>
       <h3>{item.title}</h3>
       <span>Press play. Look a little closer.</span>

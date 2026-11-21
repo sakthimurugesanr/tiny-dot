@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Hand, Ruler, Heart, Check, MessageCircle } from "lucide-react";
+import { Hand, Ruler, Heart, BadgeCheck, MessageCircle } from "lucide-react";
 import { BookingButton } from "@/components/booking/booking-provider";
 import { site } from "@/config/site";
 export function AboutStudio() {
@@ -9,7 +9,7 @@ export function AboutStudio() {
       <section className="section about-intro">
         <div>
           <span className="eyebrow">
-            THE PEOPLE. THE PATIENCE. THE LITTLE DETAILS.
+            The people. The patience. The little details.
           </span>
           <h1>
             Small models.
@@ -17,7 +17,7 @@ export function AboutStudio() {
             <em>A personal story.</em>
           </h1>
           <p>
-            TINY DOT’S miniatures is a place for ideas that deserve a closer
+            Tiny Dot’s miniatures is a place for ideas that deserve a closer
             look. We create handmade vehicle models, miniature homes, academic
             projects and bespoke craft pieces, shaped around the details that
             matter to you.
@@ -38,18 +38,17 @@ export function AboutStudio() {
         <div className="about-main-image">
           <Image
             src="/media/photos/maker-and-bus.webp"
-            alt="The TINY DOT’S maker holding a handcrafted bus"
+            alt="The Tiny Dot’s maker holding a handcrafted bus"
             fill
             preload
             sizes="(max-width:800px) 90vw, 45vw"
           />
-          <span>Behind every little model, a pair of patient hands.</span>
         </div>
       </section>
       <section className="section about-values">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">OUR WAY OF MAKING</span>
+            <span className="eyebrow">Our way of making</span>
             <h2>
               Thoughtful from
               <br />
@@ -91,7 +90,7 @@ export function AboutStudio() {
         </div>
       </section>
       <section className="section studio-quote">
-        <span className="eyebrow">A STUDIO NOTE</span>
+        <span className="eyebrow">A studio note</span>
         <blockquote>
           “Made with patience.
           <br />
@@ -110,7 +109,7 @@ export function AboutStudio() {
           />
         </div>
         <div>
-          <span className="eyebrow">THE CONVERSATION BEFORE THE CRAFT</span>
+          <span className="eyebrow">The conversation before the craft</span>
           <h2>
             Bring the story.
             <br />
@@ -129,7 +128,7 @@ export function AboutStudio() {
               "Agree on the scope, price and timing directly.",
             ].map((text) => (
               <li key={text}>
-                <Check size={16} />
+                <BadgeCheck size={16} />
                 {text}
               </li>
             ))}
@@ -140,7 +139,7 @@ export function AboutStudio() {
         </div>
       </section>
       <section className="section brief-banner enhanced-cta">
-        <span className="eyebrow">YOUR STORY IS A GOOD PLACE TO START</span>
+        <span className="eyebrow">Your story is a good place to start</span>
         <h2>Let’s make it personal.</h2>
         <p>
           Explore an idea for a model, a gift or a project in a simple

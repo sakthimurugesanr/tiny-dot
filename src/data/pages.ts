@@ -14,21 +14,21 @@ export const editorialPages: Record<
   about: {
     title: "Small things.",
     accent: "Deeply felt.",
-    eyebrow: "ABOUT TINY DOT’S MINIATURES",
+    eyebrow: "About Tiny Dot’s miniatures",
     description:
-      "Custom handmade miniatures, scale models and craft work by TINY DOT’S. From vehicles and homes to academic projects, every idea starts with a conversation.",
+      "Custom handmade miniatures, scale models and craft work by Tiny Dot’s. From vehicles and homes to academic projects, every idea starts with a conversation.",
     image: "/media/photos/maker-and-bus.webp",
     heading: "A little world of handcraft.",
     body: [
-      "TINY DOT’S miniatures creates custom vehicle models, miniature houses, school and college projects, and bespoke handcraft pieces.",
-      "Our featured Tamil Nadu bus model is shared on the TINY DOT’S YouTube channel. Explore the original Short for a closer look at the seating, curtains, rear ladder and display base.",
+      "Tiny Dot’s miniatures creates custom vehicle models, miniature houses, school and college projects, and bespoke handcraft pieces.",
+      "Our featured Tamil Nadu bus model is shared on the Tiny Dot’s YouTube channel. Explore the original Short for a closer look at the seating, curtains, rear ladder and display base.",
       "Call 7094341480 or visit our Instagram and YouTube profiles to discuss your own model. Pricing, turnaround and delivery are confirmed directly for each project. The main work gallery contains a curated selection of our own model photographs and studio films.",
     ],
   },
   studio: {
     title: "Where little",
     accent: "worlds begin.",
-    eyebrow: "INSIDE THE STUDIO",
+    eyebrow: "Inside the studio",
     description: "A visual diary of texture, color and ideas taking shape.",
     image: "/images/workbench.webp",
     heading: "A place for patient hands.",
@@ -41,7 +41,7 @@ export const editorialPages: Record<
   "miniature-art": {
     title: "A little world.",
     accent: "A lot of wonder.",
-    eyebrow: "MINIATURE ART",
+    eyebrow: "Miniature art",
     description:
       "An invitation to look closer at places, objects and stories made extraordinary through scale.",
     image: "/images/cottage.webp",
@@ -69,7 +69,7 @@ export const editorialPages: Record<
   "miniature-photography": {
     title: "Look closer.",
     accent: "Feel more.",
-    eyebrow: "MINIATURE PHOTOGRAPHY",
+    eyebrow: "Miniature photography",
     description:
       "A different perspective on a smaller world. Macro detail, thoughtful lighting and cinematic atmosphere.",
     image: "/images/photography.webp",
@@ -83,7 +83,7 @@ export const editorialPages: Record<
   "custom-projects": {
     title: "Your memories.",
     accent: "In miniature.",
-    eyebrow: "CUSTOM PROJECTS",
+    eyebrow: "Custom projects",
     description:
       "Personal stories, architectural places and creative ideas, imagined at a smaller scale.",
     image: "/images/cottage.webp",

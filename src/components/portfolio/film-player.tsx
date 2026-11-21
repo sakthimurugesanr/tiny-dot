@@ -24,7 +24,7 @@ export default function FilmPlayer({
           </Dialog.Close>
           <Dialog.Title>{film.title}</Dialog.Title>
           <Dialog.Description>
-            A closer look at the TINY DOT’S collection.
+            A closer look at the Tiny Dot’s collection.
           </Dialog.Description>
           <video
             key={film.id}

@@ -1,5 +1,43 @@
 # Verification — 26 October 2026
 
+## Latest presentation and interaction refinements
+
+- Removed the hero slideshow control bar, the three-item approach strip, the homepage service-summary line/CTA and the occasion introduction's right-hand text card. Added a subtle pale-blue lower mobile hero fade and expanded the desktop hero to a 600 px minimum with a wider container.
+- Section labels and header text branding use Comfortaa; the footer wordmark uses Monoton. Both fonts are self-hosted through Next/Font. Verified the footer wordmark fits its container.
+- Counters have a transparent background and four values: the client-supplied 100+ deliveries, 40 service options, seven categories and 20 actual curated portfolio photos. The process section uses connected circular steps, arranged horizontally on desktop and vertically on mobile.
+- The maker portrait uses its full square composition with contain sizing and no image parallax/zoom, preserving the face and the model on mobile and desktop.
+- Search/filter controls align at identical top positions and 49 px heights on desktop. Focused MUI input and shared dropdown/calendar triggers retain a single border with no extra outline. Browser checks confirmed search, service preset, time selection and calendar date selection.
+- Memoized hero image components, stable image-load callbacks, a precomputed service search index, memoized filtering/select/date components and stable option arrays reduce repeated work. Calendar code loads only when its popover opens. GSAP initialization runs during idle time; individual cards reveal on entry and filtered-in cards are observed. Animation cleanup and reduced-motion support remain in place. Removed 42 unused stylesheet rules for the deleted controls/strip.
+- Browser checks covered Home, Services, Bookings, Portfolio, About, Contact and a JSON service page at 320, 768 and 1440 px: 21 combinations with no horizontal document overflow. Additional 390 px mobile and 1280 px desktop visuals were inspected; captured browser error logs were empty.
+- Lint, TypeScript, Webpack production build, all 78 public-route smoke checks and booking integration checks passed. Synthetic booking records were removed by their test script. The existing Next.js dependency advisory remains.
+
+No new Lighthouse score, transfer-size reduction or cross-device frame-rate guarantee is claimed for these optimizations.
+
+## Gradient palette and JSON catalogue — 20 November 2026
+
+- Balanced the blue with muted sapphire (#365a91), warm ivory, lavender and teal. Added layered page gradients and tinted gradients to section surfaces, cards, banners, the header and footer.
+- Reduced desktop section padding to 36 px and mobile padding to 28 px; shortened service introductions, preview images, gallery rows and other large image areas. The desktop homepage service preview now uses one four-card row (811 px total section height measured at 1440 px).
+- Increased the mobile hero to a 760 px minimum, verified at 320 and 390 px. Moved its slideshow controls to the left so they do not overlap the floating contact buttons.
+- Connected the supplied JSON catalogue to 40 server-rendered service detail routes, with customization choices, references, expandable process steps, indicative production ranges, care and packing notes, metadata and sitemap entries. The detailed JSON stays on the server. Quote buttons map JSON names back to validated booking service values.
+- Confirmed all 40 existing service options map to unique JSON slugs. Browser testing verified detail navigation, process expansion and the Custom Human Miniatures enquiry preset.
+- Responsive checks: six pages at 320 px, seven pages at 768 px and seven at 1440 px, including a JSON service page; no horizontal document overflow. The homepage was also inspected at 390 and 1280 px.
+- Lint, TypeScript and all 78 public-route HTTP smoke checks passed, including the 40 new service routes and existing validation/not-found checks. No new performance score is claimed.
+
+## Blue studio refresh — 20 November 2026
+
+- Applied a blue theme across shared layouts, buttons, MUI fields, navigation and footer. Comfortaa styles the text wordmark; Encode Sans Semi Expanded styles section labels. Fonts are self-hosted with Next/Font.
+- Added all 40 requested services in seven categories, searchable category cards, individual enquiry presets and working category links from the homepage. Legacy service values remain accepted by the APIs.
+- Prepared four responsive WebP copies of the supplied Plenty-of-possibility photographs (approximately 284 KB combined), preserving the originals. Added faded service images and image-backed service/occasion introductions.
+- Added five hero messages with blur/fade transitions, pause and slide controls. GSAP supplies image parallax, section reveals and the count-up treatment; reduced-motion preferences disable automatic motion. Delivery count 100+ was supplied by the client; 40 services and seven categories are derived from the catalogue.
+- Replaced native form dropdowns and date inputs with shared Radix/shadcn-style selects and a Popover/React DayPicker calendar. Text fields and consent controls retain MUI. Verified calendar selection inside the booking drawer, future-date availability, service presets and required-field feedback.
+- Replaced the bottom horizontal contact bar with two vertically stacked circular Call/WhatsApp links. Removed the extra appointment tab and header emblem, and aligned the mobile approach list into icon/text rows.
+- Browser checks covered Home, Services, Portfolio, About, Contact and Bookings at actual CSS widths 320, 768 and 1440 px: 18 combinations with no horizontal document overflow. The 320 px slideshow controls and calendar were also checked for fit.
+- Verified all seven service cards and 40 option buttons, the vehicle filter (one card/four options), architecture category links, empty-search recovery, 3D Printing enquiry preset, fifth hero message, final counter values, footer font and no captured browser console errors.
+- Lint and TypeScript passed. The Webpack production build passed. The existing Next.js security advisory remains; no dependency security upgrade was included.
+- Booking integration checks passed validation, consent, origin/body checks, persistence and matching receipts for a legacy service plus Wedding Miniatures and 3D Printing, rate limiting and private-record isolation. The script removed its own synthetic booking records.
+
+These checks do not claim an updated Lighthouse score or measured frame rate across devices.
+
 ## Build and routes
 
 - Production `npm run build`: passed, including strict TypeScript checking; 43 generated build entries.

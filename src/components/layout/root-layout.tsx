@@ -1,4 +1,6 @@
-import { Gabarito, Nunito } from "next/font/google";
+import { Comfortaa } from "next/font/google";
+import { Suspense } from "react";
+import { NavigationScrollReset } from "@/components/layout/navigation-scroll-reset";
 import { BookingProvider } from "@/components/booking/booking-provider";
 import { bookingStorageDir } from "@/lib/server/booking-storage";
 import type { Metadata } from "next";
@@ -9,14 +11,12 @@ import { Reveal } from "@/components/animations/reveal";
 import { site } from "@/config/site";
 import "@/app/globals.css";
 import "@/app/experience.css";
-const gabarito = Gabarito({
+import "react-day-picker/style.css";
+import "@/app/refinement.css";
+const sectionLabel = Comfortaa({
   subsets: ["latin"],
-  variable: "--font-gabarito",
-  display: "swap",
-});
-const nunito = Nunito({
-  subsets: ["latin"],
-  variable: "--font-nunito",
+  weight: "variable",
+  variable: "--font-section-label",
   display: "swap",
 });
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: "/media/photos/om-sakthi-bus.webp",
         width: 1080,
         height: 1350,
-        alt: "Handcrafted OM SAKTHI miniature bus by TINY DOT’S",
+        alt: "Handcrafted OM SAKTHI miniature bus by Tiny Dot’s",
       },
     ],
     type: "website",
@@ -52,10 +52,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${gabarito.variable} ${nunito.variable} light`}
+      className={`${sectionLabel.variable} light`}
       style={{ colorScheme: "light" }}
     >
       <body id="top">
+        <Suspense fallback={null}>
+          <NavigationScrollReset />
+        </Suspense>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

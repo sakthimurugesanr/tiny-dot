@@ -6,7 +6,7 @@ export function Footer() {
     <footer id="footer">
       <div className="footer-top">
         <div>
-          <span className="eyebrow">A LITTLE DETAIL. A LOT OF HEART.</span>
+          <span className="eyebrow">A little detail. A lot of heart.</span>
           <h2>
             Made small.
             <br />
@@ -18,11 +18,11 @@ export function Footer() {
         </div>
         <div className="footer-links">
           <div>
-            <span className="eyebrow">EXPLORE</span>
+            <span className="eyebrow">Explore</span>
             {[
               ["Our work", "/portfolio"],
               ["Our services", "/services"],
-              ["About TINY DOT’S", "/about"],
+              ["About Tiny Dot’s", "/about"],
               ["Project enquiry", "/commissions"],
               ["Contact", "/contact"],
             ].map(([name, href]) => (
@@ -32,13 +32,13 @@ export function Footer() {
             ))}
           </div>
           <div>
-            <span className="eyebrow">LET’S CONNECT</span>
+            <span className="eyebrow">Let’s connect</span>
             <ContactLinks />
           </div>
         </div>
       </div>
       <div className="footer-wordmark">
-        TINY DOT’S<span>miniatures</span>
+        Tiny Dot’s<span>miniatures</span>
       </div>
       <div className="footer-bottom">
         <span>

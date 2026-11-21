@@ -1,5 +1,5 @@
 export const site = {
-  name: "TINY DOT'S miniatures",
+  name: "Tiny Dot's miniatures",
   tagline: "Small details. Made by hand.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
@@ -11,14 +11,14 @@ export const site = {
   instagram: "https://www.instagram.com/tinydots_miniatures1/",
   featuredVideo: "https://www.youtube.com/watch?v=CaKqd1AvCJc",
   description:
-    "Custom handmade vehicle miniatures, miniature homes, school and college projects, and bespoke handcraft work by TINY DOT'S miniatures. Call 7094341480 to discuss your idea.",
+    "Explore 40 custom miniature services from Tiny Dot's: personalized figurines, architectural models, dioramas, vehicles, corporate models, gifts and 3D printing. Call 7094341480 to discuss your idea.",
   demo: true,
 };
 export const navigation = [
   ["Home", "/"],
-  ["Our work", "/portfolio"],
-  ["Services", "/services"],
-  ["About us", "/about"],
+  ["Our creations", "/portfolio"],
+  ["Miniature services", "/services"],
+  ["The studio", "/about"],
   ["Project enquiry", "/commissions"],
   ["Contact", "/contact"],
 ];

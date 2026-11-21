@@ -1,10 +1,12 @@
 import { z } from "zod";
+import { serviceOptions } from "@/data/services";
 export const commissionTypes = [
   "Vehicle Miniature",
   "Miniature House",
   "School / College Project",
   "Handcraft Work",
   "Other",
+  ...serviceOptions,
 ] as const;
 export const commissionBudgets = [
   "To be discussed",

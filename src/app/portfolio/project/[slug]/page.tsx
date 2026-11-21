@@ -52,7 +52,7 @@ async function PageContent({ params }: { params: Promise<{ slug: string }> }) {
       </div>
       <section className="section project-intro">
         <div data-reveal>
-          <span className="eyebrow">THE ARTISTIC CONCEPT</span>
+          <span className="eyebrow">The artistic concept</span>
           <h2>
             A place to <em>get lost in.</em>
           </h2>
@@ -80,7 +80,7 @@ async function PageContent({ params }: { params: Promise<{ slug: string }> }) {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="section-heading">
           <div>
-            <span className="eyebrow">LOOK A LITTLE CLOSER</span>
+            <span className="eyebrow">Look a little closer</span>
             <h2>
               The world <em>in detail.</em>
             </h2>
@@ -105,17 +105,17 @@ async function PageContent({ params }: { params: Promise<{ slug: string }> }) {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="project-nav">
           <Link href={`/portfolio/project/${prev.slug}`}>
-            <small>← PREVIOUS WORLD</small>
+            <small>← previous world</small>
             {prev.name}
           </Link>
           <Link href={`/portfolio/project/${next.slug}`}>
-            <small>NEXT WORLD →</small>
+            <small>Next world →</small>
             {next.name}
           </Link>
         </div>
       </section>
       <section className="commission-preview section">
-        <span className="eyebrow">YOUR STORY IS NEXT</span>
+        <span className="eyebrow">Your story is next</span>
         <h2>
           What world do <em>you imagine?</em>
         </h2>

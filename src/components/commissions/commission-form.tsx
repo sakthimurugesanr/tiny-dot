@@ -11,7 +11,7 @@ export function CommissionForm({
   return (
     <section className="section booking-page-section">
       <div className="booking-page-aside">
-        <span className="eyebrow">A SIMPLE FIRST STEP</span>
+        <span className="eyebrow">A simple first step</span>
         <h2>
           Big ideas.
           <br />
@@ -22,7 +22,7 @@ export function CommissionForm({
           discuss your idea before any work or payment is agreed.
         </p>
         <ul>
-          <li>Custom buses, homes and craft models</li>
+          <li>Personalized miniatures, buildings, vehicles and creative models</li>
           <li>References and personal details welcome</li>
           <li>Pricing and timing discussed directly</li>
           <li>No payment required to send a request</li>

@@ -3,6 +3,9 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { mediaImages, mediaVideos } from "../src/data/media.ts";
+import { serviceOptions } from "../src/data/services.ts";
+assert.equal(serviceOptions.length, 40);
+assert.equal(new Set(serviceOptions).size, 40);
 const base = process.argv[2] || "http://127.0.0.1:3000";
 const storage = path.resolve(process.argv[3] || "private-data/bookings");
 const network = "booking-qa-" + randomUUID();
@@ -46,7 +49,14 @@ assert.equal((await post({ ...demo, message: "x".repeat(17000) })).status, 413);
 const ids = [];
 try {
   for (let i = 0; i < 3; i++) {
-    const response = await post({ ...demo, message: demo.message + " " + i });
+    const service = ["Vehicle Miniature", "Wedding Miniatures", "3D Printing"][
+      i
+    ];
+    const response = await post({
+      ...demo,
+      service,
+      message: demo.message + " " + i,
+    });
     assert.equal(response.status, 201);
     const result = await response.json();
     assert.equal(result.status, "pending");
@@ -59,6 +69,7 @@ try {
     assert.equal(saved.status, "pending");
     assert.equal(saved.request.phone, demo.phone);
     assert.equal(saved.request.email, demo.email);
+    assert.equal(saved.request.service, service);
   }
   assert.equal((await post(demo)).status, 429);
   const privateResponse = await fetch(

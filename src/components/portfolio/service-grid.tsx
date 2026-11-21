@@ -1,58 +1,108 @@
 "use client";
 import { memo } from "react";
-import { BusFront, House, GraduationCap, Scissors, Check } from "lucide-react";
-import { services } from "@/data/services";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  BusFront,
+  House,
+  UsersRound,
+  Layers3,
+  Building2,
+  Gift,
+  Sparkles,
+  Plus,
+  Info,
+} from "lucide-react";
+import { services, serviceSlug } from "@/data/services";
 import { BookingButton } from "@/components/booking/booking-provider";
 const icons = {
   bus: BusFront,
   home: House,
-  school: GraduationCap,
-  craft: Scissors,
+  people: UsersRound,
+  layers: Layers3,
+  building: Building2,
+  gift: Gift,
+  craft: Sparkles,
 };
 export const ServiceCard = memo(function ServiceCard({
   service,
+  compact = false,
 }: {
   service: (typeof services)[number];
+  compact?: boolean;
 }) {
-  const Icon = icons[service.icon as keyof typeof icons];
+  const Icon = icons[service.icon];
   return (
-    <article className="service-card">
-      <div className="service-card-top">
+    <article className="service-card visual-service-card">
+      <div className="service-card-image">
+        <Image
+          src={service.image}
+          alt={service.imageAlt}
+          fill
+          sizes="(max-width:600px) 90vw, (max-width:1000px) 45vw, 30vw"
+        />
         <span className="service-icon">
-          <Icon size={28} strokeWidth={1.5} />
+          <Icon size={24} strokeWidth={1.5} />
         </span>
       </div>
       <div className="service-copy">
         <span className="service-purpose">{service.purpose}</span>
         <h3>{service.name}</h3>
         <p>{service.description}</p>
-        <ul>
-          {service.includes.map((item) => (
-            <li key={item}>
-              <Check size={14} />
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p className="service-brief-tip">
-          <strong>A useful starting point:</strong> {service.brief}
-        </p>
-        <BookingButton service={service.type} className="service-booking">
-          Let’s discuss this idea
-        </BookingButton>
+        {compact ? (
+          <p className="service-option-count">
+            {service.includes.length} ways to make it yours
+          </p>
+        ) : (
+          <ul className="service-options-list">
+            {service.includes.map((item) => (
+              <li key={item}>
+                <Plus size={14} aria-hidden="true" />
+                <BookingButton service={item} className="service-option-link">
+                  {item}
+                </BookingButton>
+                <Link
+                  href={`/services/${serviceSlug(item)}`}
+                  className="service-detail-link"
+                  aria-label={`Details for ${item}`}
+                >
+                  <Info size={16} />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="service-card-actions">
+          <BookingButton
+            service={service.type}
+            className="button button-outline"
+          >
+            Discuss your idea
+          </BookingButton>
+          {compact && (
+            <Link
+              href={"/services?category=" + service.category}
+              className="text-link"
+            >
+              View options
+            </Link>
+          )}
+        </div>
       </div>
     </article>
   );
 });
 export function ServiceGrid({
   items = services,
+  compact = false,
 }: {
   items?: readonly (typeof services)[number][];
+  compact?: boolean;
 }) {
   return (
     <div className="service-grid">
       {items.map((service) => (
-        <ServiceCard key={service.slug} service={service} />
+        <ServiceCard key={service.slug} service={service} compact={compact} />
       ))}
     </div>
   );

@@ -1513,9 +1513,9 @@ textarea::placeholder {
 }
 /* Studio palette: forest green and warm ivory. */
 :root {
-  --font-sans: var(--font-nunito), sans-serif;
-  --font-serif: var(--font-gabarito), sans-serif;
-  --font-heading: var(--font-gabarito), sans-serif;
+  --font-sans: var(--font-section-label), sans-serif;
+  --font-serif: var(--font-section-label), sans-serif;
+  --font-heading: var(--font-section-label), sans-serif;
   --font-editorial: "Italiana", serif;
 }
 body {
@@ -1525,7 +1525,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-gabarito), sans-serif;
+  font-family: var(--font-section-label), sans-serif;
   font-weight: 500;
 }
 em {
@@ -1603,7 +1603,7 @@ h2 {
   display: none;
 }
 .desktop-nav > a.active {
-  font-weight: 800;
+  font-weight: 700;
 }
 .header-actions {
   gap: 16px;
@@ -1789,7 +1789,7 @@ a:hover {
 }
 .project-card-links a {
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 5px;
   padding-block: 10px;
@@ -2074,20 +2074,20 @@ footer {
 /* TINY DOT'S: one light theme with neutral surfaces and a terracotta accent. */
 :root {
   --ink: #26343f;
-  --accent-strong: #a84c32;
+  --accent-strong: #365a91;
   --panel-subtle: #eef1f3;
-  --page-white: #faf9f6;
-  --bg: #faf9f6;
+  --page-white: #faf8f4;
+  --bg: #faf8f4;
   --surface: #ffffff;
   --heading: #26343f;
   --body: #626c76;
-  --accent: #a84c32;
+  --accent: #365a91;
   --secondary: #f1eee8;
   --border: #dedfdc;
   --inverse: #ffffff;
-  --background: #faf9f6;
+  --background: #faf8f4;
   --foreground: #26343f;
-  --primary: #a84c32;
+  --primary: #365a91;
   --primary-foreground: #ffffff;
   --secondary-foreground: #26343f;
   --card: #ffffff;
@@ -2689,7 +2689,7 @@ textarea {
 }
 .desktop-nav > a.active {
   background: #f5e9e3;
-  color: #963e27;
+  color: #294775;
 }
 .button,
 .project-link {
@@ -2758,8 +2758,8 @@ textarea {
   border-radius: 6px;
 }
 .project-card-links a:first-child {
-  background: #f4e7e0;
-  color: #963e27;
+  background: #e8efff;
+  color: #294775;
 }
 .portfolio-card {
   background: #fff;
@@ -2810,7 +2810,7 @@ textarea {
   border-radius: 20px;
 }
 .brief-banner .eyebrow {
-  color: #963e27;
+  color: #294775;
 }
 .brief-banner p {
   color: var(--body);

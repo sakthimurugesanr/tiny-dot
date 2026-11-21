@@ -41,7 +41,16 @@ export default function PhotoViewer({
     panX: number;
     panY: number;
   } | null>(null);
+  const pointers = useRef(new Map<number, { x: number; y: number }>());
+  const pinch = useRef<{ distance: number; zoom: number } | null>(null);
+  const lastTap = useRef(0);
+  const lastTouch = useRef(0);
   const photo = photos[index];
+  const finishPointer = (pointerId: number) => {
+    pointers.current.delete(pointerId);
+    pinch.current = null;
+    drag.current = null;
+  };
   // Measure the actual viewer, not the window, so zoom bounds stay correct on mobile.
   useLayoutEffect(() => {
     const el = viewport.current;
@@ -63,6 +72,9 @@ export default function PhotoViewer({
     };
   }, [photo, size, zoom]);
   const reset = useCallback(() => {
+    pointers.current.clear();
+    pinch.current = null;
+    drag.current = null;
     setZoom(1);
     setPan({ x: 0, y: 0 });
   }, []);
@@ -113,7 +125,7 @@ export default function PhotoViewer({
           }}
         >
           <div className="viewer-top">
-            <span>STUDIO COLLECTION</span>
+            <span>Studio collection</span>
             <Dialog.Title>{photo.title}</Dialog.Title>
             <Dialog.Close className="viewer-icon" aria-label="Close photograph">
               <X size={21} />
@@ -127,13 +139,37 @@ export default function PhotoViewer({
             className="zoom-stage"
             ref={viewport}
             onDoubleClick={(event) => {
-              if ((event.target as Element).closest("button")) return;
+              if (
+                (event.target as Element).closest("button") ||
+                Date.now() - lastTouch.current < 500
+              )
+                return;
               setZoom((z) => (z === 1 ? 2 : 1));
               setPan({ x: 0, y: 0 });
             }}
             onPointerDown={(e) => {
-              if (zoom <= 1 || (e.target as Element).closest("button")) return;
+              if ((e.target as Element).closest("button")) return;
               e.currentTarget.setPointerCapture(e.pointerId);
+              pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+              if (pointers.current.size === 2) {
+                const [a, b] = [...pointers.current.values()];
+                pinch.current = {
+                  distance: Math.hypot(a.x - b.x, a.y - b.y),
+                  zoom,
+                };
+                drag.current = null;
+                return;
+              }
+              if (e.pointerType === "touch") {
+                lastTouch.current = Date.now();
+                const now = Date.now();
+                if (now - lastTap.current < 280) {
+                  setZoom((value) => (value === 1 ? 2 : 1));
+                  setPan({ x: 0, y: 0 });
+                  lastTap.current = 0;
+                } else lastTap.current = now;
+              }
+              if (zoom <= 1) return;
               drag.current = {
                 x: e.clientX,
                 y: e.clientY,
@@ -142,7 +178,26 @@ export default function PhotoViewer({
               };
             }}
             onPointerMove={(e) => {
+              if (!pointers.current.has(e.pointerId)) return;
+              pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+              if (pinch.current && pointers.current.size === 2) {
+                const [a, b] = [...pointers.current.values()];
+                const distance = Math.hypot(a.x - b.x, a.y - b.y);
+                setZoom(
+                  Math.min(
+                    3,
+                    Math.max(
+                      1,
+                      (pinch.current.zoom * distance) /
+                        Math.max(1, pinch.current.distance),
+                    ),
+                  ),
+                );
+                setPan({ x: 0, y: 0 });
+                return;
+              }
               if (!drag.current) return;
+              lastTap.current = 0;
               setPan({
                 x: Math.max(
                   -limits.x,
@@ -160,15 +215,12 @@ export default function PhotoViewer({
                 ),
               });
             }}
-            onPointerUp={() => {
-              drag.current = null;
-            }}
-            onPointerCancel={() => {
-              drag.current = null;
-            }}
+            onPointerUp={(event) => finishPointer(event.pointerId)}
+            onPointerCancel={(event) => finishPointer(event.pointerId)}
+            onLostPointerCapture={(event) => finishPointer(event.pointerId)}
             style={{
               cursor: zoom > 1 ? "grab" : "zoom-in",
-              touchAction: zoom > 1 ? "none" : "pan-y",
+              touchAction: "none",
             }}
           >
             <Image
@@ -181,7 +233,7 @@ export default function PhotoViewer({
               style={{
                 objectFit: "contain",
                 transform: `translate(${pan.x}px,${pan.y}px) scale(${zoom})`,
-                transition: "transform .12s ease",
+                transition: "none",
               }}
             />
             <button
@@ -236,6 +288,9 @@ export default function PhotoViewer({
                 <RotateCcw size={16} />
               </button>
             </div>
+            <span className="viewer-hint">
+              Pinch or double-tap to zoom · Drag to explore
+            </span>
             <BookingButton className="button viewer-booking">
               Make it personal
             </BookingButton>

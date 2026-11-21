@@ -27,7 +27,7 @@ async function PageContent({ params }: { params: Promise<{ slug: string }> }) {
     <>
       <PageHeading
         section="Shop"
-        eyebrow="THE LITTLE GALLERY"
+        eyebrow="The little gallery"
         title={p.name}
         description={p.story}
         demo
@@ -40,7 +40,7 @@ async function PageContent({ params }: { params: Promise<{ slug: string }> }) {
           ]}
         />
         <div className="editorial-copy">
-          <span className="eyebrow">MADE-TO-ORDER CONCEPT</span>
+          <span className="eyebrow">Made-to-order concept</span>
           <h2>
             A world <em>worth keeping.</em>
           </h2>

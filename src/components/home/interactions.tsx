@@ -19,7 +19,7 @@ export function Testimonials() {
   const [ref, api] = useEmblaCarousel({ loop: true });
   return (
     <section className="testimonials section">
-      <div className="eyebrow">THE FEELING WE HOPE TO CREATE</div>
+      <div className="eyebrow">The feeling we hope to create</div>
       <div className="embla" ref={ref}>
         <div className="embla-container">
           {quotes.map(([quote, type]) => (
@@ -38,7 +38,7 @@ export function Testimonials() {
         <button onClick={() => api?.scrollPrev()} aria-label="Previous quote">
           <ArrowLeft size={18} />
         </button>
-        <span>THOUGHTS IN MINIATURE</span>
+        <span>Thoughts in miniature</span>
         <button onClick={() => api?.scrollNext()} aria-label="Next quote">
           <ArrowRight size={18} />
         </button>

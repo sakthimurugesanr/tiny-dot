@@ -22,7 +22,7 @@ async function PageContent({
   return (
     <>
       <PageHeading
-        eyebrow="BOOKING REQUEST"
+        eyebrow="Booking request"
         title="Let’s talk"
         accent="about your miniature."
         description="A short form, a personal conversation. Share your idea and your preferred time to connect. We’ll confirm the details directly."

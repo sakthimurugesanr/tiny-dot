@@ -81,7 +81,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
             />
           </div>
           <div className="editorial-copy" data-reveal>
-            <span className="eyebrow">BIG STORIES. TINY WORLDS.</span>
+            <span className="eyebrow">Big stories. Tiny worlds.</span>
             <h2>{p.heading}</h2>
             {p.body.map((text) => (
               <p key={text}>{text}</p>
@@ -141,7 +141,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
     return (
       <>
         <PageHeading
-          eyebrow="THE CREATIVE PROCESS"
+          eyebrow="The creative process"
           title="From a little idea"
           accent="to a whole world."
           description="Slowly, thoughtfully, and one tiny detail at a time."
@@ -189,7 +189,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
     return (
       <>
         <PageHeading
-          eyebrow="A LITTLE CLARITY"
+          eyebrow="A little clarity"
           title="Big questions."
           accent="Thoughtful answers."
           description="A few things you might be wondering before creating your own little world."
@@ -211,7 +211,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
     return (
       <>
         <PageHeading
-          eyebrow="THOUGHTS IN MINIATURE"
+          eyebrow="Thoughts in miniature"
           title="Little worlds."
           accent="Lasting feelings."
           description="The emotional direction behind the work. The sample quotes below are illustrative demo copy, not client reviews."
@@ -224,7 +224,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
     return (
       <>
         <PageHeading
-          eyebrow="BEYOND THE WORKBENCH"
+          eyebrow="Beyond the workbench"
           title="Made to be"
           accent="shared."
           description="Exhibitions, creative collaborations, workshops and gallery stories."
@@ -239,7 +239,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
             />
           </div>
           <div className="editorial-copy">
-            <span className="eyebrow">THE NEXT CHAPTER</span>
+            <span className="eyebrow">The next chapter</span>
             <h2>
               A space for <em>new connections.</em>
             </h2>
@@ -263,7 +263,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
     return (
       <>
         <PageHeading
-          eyebrow="NOTES FROM A SMALL WORLD"
+          eyebrow="Notes from a small world"
           title="The studio"
           accent="journal."
           description="Creative observations, little discoveries, and stories from the workbench."
@@ -300,7 +300,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
     return (
       <>
         <PageHeading
-          eyebrow="THE LITTLE GALLERY"
+          eyebrow="The little gallery"
           title="Extraordinary things."
           accent="Worth keeping."
           description="An enquiry-based collection of concept directions. No finished stock, binding prices or checkout are offered."
@@ -326,7 +326,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
                 <h2>{p.name}</h2>
                 <p>Made-to-order concept · {p.scale}</p>
                 <div className="availability">
-                  ENQUIRE ABOUT A SIMILAR PIECE ↗
+                  Enquire about a similar piece ↗
                 </div>
               </Link>
             ))}
@@ -337,7 +337,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
   return (
     <>
       <PageHeading
-        eyebrow="STUDIO INFORMATION"
+        eyebrow="Studio information"
         title={page === "privacy" ? "Your privacy," : "A few things,"}
         accent={
           page === "privacy" ? "thoughtfully considered." : "clearly stated."
@@ -349,7 +349,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
             <>
               <h2>About this website</h2>
               <p>
-                This website presents TINY DOT’S miniatures. The main work
+                This website presents Tiny Dot’s miniatures. The main work
                 gallery contains client-supplied model photographs and films.
                 Older concept pages are separately labelled as illustrations.
                 Call 7094341480 for business enquiries.
@@ -391,7 +391,7 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
             <>
               <h2>Concept portfolio</h2>
               <p>
-                TINY DOT’S miniatures offers custom handmade models and craft
+                Tiny Dot’s miniatures offers custom handmade models and craft
                 work. The separately labelled AI-generated inspiration imagery
                 and proposed model specifications demonstrate a visual
                 direction. They do not establish completed commissions, physical
@@ -437,7 +437,7 @@ function CTA() {
       className="commission-preview section"
       style={{ background: "var(--secondary)" }}
     >
-      <span className="eyebrow">THE NEXT LITTLE WORLD COULD BE YOURS</span>
+      <span className="eyebrow">The next little world could be yours</span>
       <h2>
         Let’s make <em>something meaningful.</em>
       </h2>

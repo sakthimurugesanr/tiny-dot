@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Phone, MessageCircle, Camera, Video, Check } from "lucide-react";
+import { InstagramIcon, YoutubeIcon } from "@/components/ui/social-icons";
+import { Phone, MessageCircle, BadgeCheck } from "lucide-react";
 import { BookingButton } from "@/components/booking/booking-provider";
 import { site } from "@/config/site";
 export function ContactStudio() {
@@ -7,7 +8,7 @@ export function ContactStudio() {
     <>
       <section className="section contact-intro">
         <div>
-          <span className="eyebrow">LET’S START SOMETHING SMALL</span>
+          <span className="eyebrow">Let’s start something small</span>
           <h1>
             Good ideas start
             <br />
@@ -34,17 +35,17 @@ export function ContactStudio() {
       <section className="section contact-ways">
         <a href={site.phoneHref}>
           <Phone size={27} />
-          <small>A DIRECT CONVERSATION</small>
+          <small>A direct conversation</small>
           <h2>Give us a call.</h2>
           <strong>{site.phone}</strong>
           <p>
             Talk about your model, references and the details you have in mind.
           </p>
-          <span>Call TINY DOT’S</span>
+          <span>Call Tiny Dot’s</span>
         </a>
         <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
           <MessageCircle size={28} />
-          <small>START WITH A MESSAGE</small>
+          <small>Start with a message</small>
           <h2>Say it on WhatsApp.</h2>
           <strong>Share your idea</strong>
           <p>
@@ -54,8 +55,8 @@ export function ContactStudio() {
           <span>Open WhatsApp</span>
         </a>
         <article>
-          <Camera size={27} />
-          <small>FOLLOW THE MAKING</small>
+          <InstagramIcon size={27} />
+          <small>Follow the making</small>
           <h2>A little inspiration.</h2>
           <p>
             Explore the original social channels for miniature details and
@@ -63,11 +64,11 @@ export function ContactStudio() {
           </p>
           <div>
             <a href={site.instagram} target="_blank" rel="noopener noreferrer">
-              <Camera size={16} />
+              <InstagramIcon size={16} />
               Instagram
             </a>
             <a href={site.youtube} target="_blank" rel="noopener noreferrer">
-              <Video size={17} />
+              <YoutubeIcon size={17} />
               YouTube Shorts
             </a>
           </div>
@@ -75,7 +76,7 @@ export function ContactStudio() {
       </section>
       <section className="section contact-preparation">
         <div>
-          <span className="eyebrow">MAKE THE FIRST CONVERSATION COUNT</span>
+          <span className="eyebrow">Make the first conversation count</span>
           <h2>
             A few things
             <br />
@@ -103,7 +104,7 @@ export function ContactStudio() {
             ],
           ].map(([title, text]) => (
             <li key={title}>
-              <Check size={17} />
+              <BadgeCheck size={17} />
               <div>
                 <h3>{title}</h3>
                 <p>{text}</p>
@@ -113,7 +114,7 @@ export function ContactStudio() {
         </ul>
       </section>
       <section className="section brief-banner enhanced-cta">
-        <span className="eyebrow">PREFER TO PLAN A CONVERSATION?</span>
+        <span className="eyebrow">Prefer to plan a conversation?</span>
         <h2>
           A simple request.
           <br />A personal response.

@@ -1,7 +1,7 @@
 "use client";
 import { MaterialProvider } from "@/components/booking/material-provider";
 import { useId, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
@@ -9,6 +9,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Alert from "@mui/material/Alert";
 import { CheckCircle2, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FieldSelect } from "@/components/ui/select";
+import { DatePicker } from "@/components/ui/date-picker";
 import {
   bookingSchema,
   bookingTimes,
@@ -16,6 +18,14 @@ import {
 } from "@/lib/validations/booking";
 import { commissionTypes } from "@/lib/validations/commission";
 import { site } from "@/config/site";
+const bookingServiceOptions = commissionTypes.map((value) => ({
+  value,
+  label: value,
+}));
+const bookingTimeOptions = bookingTimes.map((value) => ({
+  value,
+  label: value,
+}));
 function BookingFields({
   service,
   project,
@@ -32,6 +42,7 @@ function BookingFields({
   const [error, setError] = useState("");
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<BookingInput>({
@@ -83,11 +94,11 @@ function BookingFields({
         <span className="success-icon">
           <CheckCircle2 size={32} />
         </span>
-        <span className="eyebrow">REQUEST RECEIVED</span>
+        <span className="eyebrow">Request received</span>
         <h3>Let’s make something special.</h3>
         <p>
           Your booking request has been saved for review. Your preferred date
-          and time will be confirmed directly by TINY DOT’S.
+          and time will be confirmed directly by Tiny Dot’s.
         </p>
         <small>Reference: {receipt}</small>
         <a className="button button-outline" href={site.phoneHref}>
@@ -132,44 +143,49 @@ function BookingFields({
           {...common("email")}
           {...input("email")}
         />
-        <TextField
-          label="What would you like made?"
-          select
-          required
-          defaultValue={service || ""}
-          className="booking-wide"
-          slotProps={{ select: { native: true }, inputLabel: { shrink: true } }}
-          {...common("service")}
-          {...input("service")}
-        >
-          <option value="" disabled>
-            Select a service
-          </option>
-          {commissionTypes.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </TextField>
-        <TextField
-          label="Preferred date (optional)"
-          type="date"
-          slotProps={{ inputLabel: { shrink: true } }}
-          {...common("date")}
-          {...input("date")}
+        <div className="booking-wide">
+          <Controller
+            name="service"
+            control={control}
+            render={({ field }) => (
+              <FieldSelect
+                {...field}
+                id={`${prefix}-service`}
+                label="What would you like made?"
+                required
+                onValueChange={field.onChange}
+                options={bookingServiceOptions}
+                error={errors.service?.message}
+              />
+            )}
+          />
+        </div>
+        <Controller
+          name="date"
+          control={control}
+          render={({ field }) => (
+            <DatePicker
+              {...field}
+              id={`${prefix}-date`}
+              label="Preferred date (optional)"
+              error={errors.date?.message}
+            />
+          )}
         />
-        <TextField
-          label="Best time to call"
-          select
-          defaultValue="Any time"
-          slotProps={{ select: { native: true }, inputLabel: { shrink: true } }}
-          {...common("time")}
-          {...input("time")}
-        >
-          {bookingTimes.map((t) => (
-            <option key={t}>{t}</option>
-          ))}
-        </TextField>
+        <Controller
+          name="time"
+          control={control}
+          render={({ field }) => (
+            <FieldSelect
+              {...field}
+              id={`${prefix}-time`}
+              label="Best time to call"
+              onValueChange={field.onChange}
+              options={bookingTimeOptions}
+              error={errors.time?.message}
+            />
+          )}
+        />
         <TextField
           label="A little about your idea"
           placeholder="Model, size, special details or the occasion…"

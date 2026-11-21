@@ -4,11 +4,14 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     mode: "light",
-    primary: { main: "#a84c32" },
-    text: { primary: "#26343f", secondary: "#626c76" },
-    background: { paper: "#ffffff", default: "#faf9f6" },
+    primary: { main: "#145de0" },
+    text: { primary: "#24334a", secondary: "#536680" },
+    background: { paper: "#ffffff", default: "#f6f9ff" },
   },
-  typography: { fontFamily: "var(--font-nunito), sans-serif", fontSize: 14 },
+  typography: {
+    fontFamily: "var(--font-section-label), sans-serif",
+    fontSize: 14,
+  },
   shape: { borderRadius: 10 },
   components: {
     MuiTextField: {
@@ -16,7 +19,15 @@ const theme = createTheme({
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        root: { backgroundColor: "#fff", minHeight: 49 },
+        root: {
+          backgroundColor: "#fff",
+          minHeight: 49,
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": { borderWidth: 1 },
+          "& input:focus-visible, & textarea:focus-visible": {
+            outline: "none",
+            boxShadow: "none",
+          },
+        },
         input: { fontSize: 15 },
       },
     },

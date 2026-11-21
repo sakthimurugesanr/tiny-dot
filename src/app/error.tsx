@@ -2,7 +2,7 @@
 export default function Error({ reset }: { reset: () => void }) {
   return (
     <section className="error-page">
-      <span className="eyebrow">A MOMENTARY PAUSE</span>
+      <span className="eyebrow">A momentary pause</span>
       <h1>
         A little
         <br />

@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useCallback, useContext, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { CalendarDays, X } from "lucide-react";
+import { X } from "lucide-react";
 import dynamic from "next/dynamic";
 const BookingForm = dynamic(
   () => import("@/components/booking/booking-form").then((m) => m.BookingForm),
@@ -43,21 +43,12 @@ export function BookingProvider({
   return (
     <BookingContext value={begin}>
       {children}
-      <button
-        className="appointment-tab"
-        aria-haspopup="dialog"
-        aria-expanded={open}
-        onClick={() => begin()}
-      >
-        <CalendarDays size={18} />
-        <span>Book an appointment</span>
-      </button>
       <Dialog.Root open={open} onOpenChange={setOpen}>
         <Dialog.Portal>
           <Dialog.Overlay className="booking-overlay" />
           <Dialog.Content className="booking-drawer">
             <div className="booking-drawer-heading">
-              <span className="eyebrow">LET’S TALK ABOUT YOUR IDEA</span>
+              <span className="eyebrow">Let’s talk about your idea</span>
               <Dialog.Close
                 className="booking-close"
                 aria-label="Close appointment drawer"

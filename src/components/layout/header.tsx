@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { BookingButton } from "@/components/booking/booking-provider";
 import { usePathname } from "next/navigation";
-import { X, CircleDot, Phone, MessageCircle } from "lucide-react";
+import { X, Phone, MessageCircle } from "lucide-react";
 import { useState, type CSSProperties } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { site, navigation } from "@/config/site";
@@ -15,11 +15,10 @@ export function Header() {
         prefetch={false}
         href="/"
         className="brand"
-        aria-label="TINY DOT’S miniatures home"
+        aria-label="Tiny Dot’s miniatures home"
       >
-        <CircleDot className="brand-icon" strokeWidth={1} />
         <span>
-          TINY DOT’S<small>miniatures</small>
+          Tiny Dot’s<small>miniatures</small>
         </span>
       </Link>
       <nav className="desktop-nav" aria-label="Main navigation">
@@ -42,9 +41,7 @@ export function Header() {
           ))}
       </nav>
       <div className="header-actions">
-        <BookingButton className="project-link">
-          Book a consultation
-        </BookingButton>
+        <BookingButton className="project-link">Start a project</BookingButton>
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger
             className="menu-trigger"
@@ -61,7 +58,7 @@ export function Header() {
             <Dialog.Overlay className="menu-overlay" />
             <Dialog.Content className="mobile-menu">
               <Dialog.Title className="eyebrow">
-                EXPLORE TINY DOT’S MINIATURES
+                Explore Tiny Dot’s miniatures
               </Dialog.Title>
               <Dialog.Description className="sr-only">
                 Studio navigation
@@ -90,7 +87,7 @@ export function Header() {
                 ))}
               </nav>
               <div className="mobile-menu-note">
-                <span className="eyebrow">LET’S MAKE SOMETHING PERSONAL</span>
+                <span className="eyebrow">Let’s make something personal</span>
                 <p>
                   Small details.
                   <br />

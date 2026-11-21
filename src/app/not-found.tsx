@@ -2,7 +2,7 @@ import { ButtonLink } from "@/components/ui/button";
 export default function NotFound() {
   return (
     <section className="error-page">
-      <span className="eyebrow">A LITTLE DETOUR</span>
+      <span className="eyebrow">A little detour</span>
       <h1>
         This world is
         <br />

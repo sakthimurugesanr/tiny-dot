@@ -1,70 +1,53 @@
 import Image from "next/image";
+import { InstagramIcon, YoutubeIcon } from "@/components/ui/social-icons";
 import Link from "next/link";
-import {
-  Phone,
-  Ruler,
-  Hand,
-  Heart,
-  CalendarDays,
-  Camera,
-  Video,
-  MessageCircle,
-} from "lucide-react";
+import { Phone, CalendarDays, MessageCircle } from "lucide-react";
 import { WorkGallery, VideoGrid } from "@/components/portfolio/work-gallery";
 import { ServiceGrid } from "@/components/portfolio/service-grid";
 import { BookingButton } from "@/components/booking/booking-provider";
 import { mediaImages } from "@/data/media";
 import { site } from "@/config/site";
 import { HeroShowcase } from "./hero-showcase";
+import { StudioStats } from "./studio-stats";
+import { services } from "@/data/services";
 const maker = mediaImages.find((p) => p.id === "maker-and-bus")!;
 export default function Home() {
   return (
     <>
       <HeroShowcase />
-      <section className="value-strip" aria-label="Our approach">
-        <div>
-          <Hand size={23} />
-          <span>
-            <strong>Handmade, start to finish</strong>
-            <small>Patient work. Personal details.</small>
-          </span>
-        </div>
-        <div>
-          <Ruler size={23} />
-          <span>
-            <strong>Built around your idea</strong>
-            <small>Your references set the direction.</small>
-          </span>
-        </div>
-        <div>
-          <Heart size={23} />
-          <span>
-            <strong>Made to mean something</strong>
-            <small>For memories, gifting and display.</small>
-          </span>
-        </div>
-      </section>
+      <StudioStats />
       <section className="section services-section home-services" id="services">
-        <div className="section-heading">
+        <div className="section-heading faded-section-intro">
+          <div className="section-intro-photo" aria-hidden="true">
+            <Image
+              src="/images/services/home.webp"
+              alt=""
+              fill
+              sizes="(max-width:800px) 100vw, 65vw"
+            />
+          </div>
           <div>
-            <span className="eyebrow">WHAT WE CAN MAKE</span>
+            <span className="eyebrow">What we can make</span>
             <h2>
               A small scale.
               <br />
               Plenty of possibility.
             </h2>
           </div>
-          <p>
-            Choose a starting point. We’ll work through the size, details,
-            finish and presentation together.
-          </p>
         </div>
-        <ServiceGrid />
+        <ServiceGrid
+          compact
+          items={services.filter((service) =>
+            ["personalized", "architecture", "vehicles", "craft"].includes(
+              service.category,
+            ),
+          )}
+        />
       </section>
       <section className="section real-work-section" id="our-work">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">FROM OUR OWN WORKBENCH</span>
+            <span className="eyebrow">From our own workbench</span>
             <h2>
               Small things.
               <br />
@@ -73,14 +56,14 @@ export default function Home() {
           </div>
           <p>
             A curated selection of our buses, homes, architecture and craft
-            work. Real photographs from the TINY DOT’S collection.
+            work. Real photographs from the Tiny Dot’s collection.
           </p>
         </div>
         <WorkGallery preview />
       </section>
       <section className="section detail-points-section">
         <div>
-          <span className="eyebrow">IT’S ALL IN THE DETAILS</span>
+          <span className="eyebrow">It’s all in the details</span>
           <h2>
             Make it yours.
             <br />
@@ -120,7 +103,6 @@ export default function Home() {
       <section className="section studio-films">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">MOVEMENT. MAKING. MINIATURES.</span>
             <h2>
               Watch a little
               <br />
@@ -141,18 +123,22 @@ export default function Home() {
         </div>
       </section>
       <section className="section occasion-section">
-        <div className="section-heading">
+        <div className="section-heading faded-section-intro">
+          <div className="section-intro-photo" aria-hidden="true">
+            <Image
+              src="/images/services/handcraft.webp"
+              alt=""
+              fill
+              sizes="(max-width:800px) 100vw, 65vw"
+            />
+          </div>
           <div>
-            <span className="eyebrow">FOR YOUR KIND OF STORY</span>
+            <span className="eyebrow">For your kind of story</span>
             <h2>
               A little world.
               <br />A bigger meaning.
             </h2>
           </div>
-          <p>
-            A miniature can mark an occasion, keep a place close or help an idea
-            come to life.
-          </p>
         </div>
         <div className="occasion-grid">
           {[
@@ -195,7 +181,7 @@ export default function Home() {
         </div>
       </section>
       <section className="section studio-quote">
-        <span className="eyebrow">A NOTE FROM OUR STUDIO</span>
+        <span className="eyebrow">A note from our studio</span>
         <blockquote>
           “Small things can hold
           <br />
@@ -206,7 +192,7 @@ export default function Home() {
       <section className="section how-it-works">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">FROM IDEA TO MINIATURE</span>
+            <span className="eyebrow">From idea to miniature</span>
             <h2>Your idea starts here.</h2>
           </div>
           <BookingButton className="button button-outline">
@@ -227,8 +213,11 @@ export default function Home() {
               "Agree before we begin",
               "We confirm the project scope, pricing and delivery options directly before any work is agreed.",
             ],
-          ].map(([title, body]) => (
+          ].map(([title, body], index) => (
             <article key={title}>
+              <span className="process-dot" aria-label={`Step ${index + 1}`}>
+                {index + 1}
+              </span>
               <h3>{title}</h3>
               <p>{body}</p>
             </article>
@@ -245,14 +234,14 @@ export default function Home() {
           />
         </div>
         <div>
-          <span className="eyebrow">MEET THE HANDS BEHIND THE MINIATURES</span>
+          <span className="eyebrow">Meet the hands behind the miniatures</span>
           <h2>
             A love for craft.
             <br />A world of details.
           </h2>
           <p>
-            TINY DOT’S miniatures brings together vehicle models, home
-            miniatures, academic projects and bespoke handcraft work. Every new
+            Tiny Dot’s miniatures brings together personalized keepsakes,
+            buildings, vehicles, dioramas, gifts and bespoke craft. Every new
             idea begins with a conversation about the details that matter to
             you.
           </p>
@@ -277,12 +266,12 @@ export default function Home() {
         </div>
       </section>
       <section className="section quote-inline">
-        <span>THE WAY WE MAKE</span>
+        <span>The way we make</span>
         <blockquote>“Less hurry. More heart. Every little detail.”</blockquote>
       </section>
       <section className="section booking-faq">
         <div>
-          <span className="eyebrow">BEFORE WE GET STARTED</span>
+          <span className="eyebrow">Before we get started</span>
           <h2>
             A few little
             <br />
@@ -304,7 +293,7 @@ export default function Home() {
             ],
             [
               "Does a booking request confirm an appointment?",
-              "A request records your preferred date and time. TINY DOT’S confirms the appointment directly after reviewing your details.",
+              "A request records your preferred date and time. Tiny Dot’s confirms the appointment directly after reviewing your details.",
             ],
             [
               "Can I discuss delivery before ordering?",
@@ -320,19 +309,19 @@ export default function Home() {
       </section>
       <section className="section social-section">
         <div>
-          <span className="eyebrow">MORE FROM OUR LITTLE WORLD</span>
+          <span className="eyebrow">More from our little world</span>
           <h2>Follow the making.</h2>
           <p>Find more details and updates on our original social channels.</p>
         </div>
         <div className="social-cards">
           <a href={site.youtube} target="_blank" rel="noopener noreferrer">
-            <Video size={27} />
+            <YoutubeIcon size={27} />
             <strong>YouTube Shorts</strong>
             <span>@tinydotsminiatures3747</span>
             <small>Watch our miniature models</small>
           </a>
           <a href={site.instagram} target="_blank" rel="noopener noreferrer">
-            <Camera size={27} />
+            <InstagramIcon size={27} />
             <strong>Instagram</strong>
             <span>@tinydots_miniatures1</span>
             <small>Follow the latest work</small>
@@ -341,7 +330,7 @@ export default function Home() {
       </section>
       <section className="section brief-banner enhanced-cta">
         <span className="eyebrow">
-          A LITTLE IDEA CAN BECOME SOMETHING SPECIAL
+          A little idea can become something special
         </span>
         <h2>
           What shall we

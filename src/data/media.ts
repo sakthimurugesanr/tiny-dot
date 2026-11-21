@@ -176,7 +176,7 @@ export const mediaImages = [
     src: "/media/photos/maker-and-bus.webp",
     title: "The hands behind the details",
     category: "craft",
-    alt: "TINY DOT’S maker holding a finished miniature bus",
+    alt: "Tiny Dot’s maker holding a finished miniature bus",
     width: 1080,
     height: 1080,
   },

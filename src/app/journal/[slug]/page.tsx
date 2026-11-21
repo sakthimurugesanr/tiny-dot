@@ -29,7 +29,7 @@ async function PageContent({ params }: { params: Promise<{ slug: string }> }) {
         section="Journal"
         eyebrow={j.tag}
         title={j.title}
-        description="STUDIO NOTES · 4 MIN READ"
+        description="Studio notes · 4 min read"
       />
       <div className="project-hero-image">
         <Image
