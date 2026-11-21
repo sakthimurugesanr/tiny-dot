@@ -539,6 +539,8 @@ body {
   background: transparent;
   border: 0;
   box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   width: auto;
   z-index: 75;
 }

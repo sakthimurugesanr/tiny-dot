@@ -1927,9 +1927,11 @@
     grid-template-columns: 1fr 1.2fr 1.5fr;
     gap: 8px;
     padding: 10px 12px max(10px, env(safe-area-inset-bottom));
-    background: #fffffff5;
-    border-top: 1px solid #e2e7e1;
-    backdrop-filter: blur(14px);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
   .contact-action-dock > a {
     padding: 11px 8px;
