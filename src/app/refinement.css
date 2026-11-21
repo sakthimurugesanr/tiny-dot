@@ -264,12 +264,31 @@ body {
   display: flex;
   flex-direction: column;
 }
+.service-card-compact {
+  position: relative;
+  isolation: isolate;
+}
+.service-card-surface-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+}
+.service-card-surface-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+.service-card-compact .service-card-actions > * {
+  position: relative;
+  z-index: 3;
+}
 .visual-service-card:hover {
   transform: translateY(-4px);
   border-color: #abc5f1;
   box-shadow: 0 14px 35px #2245800d;
 }
 .service-card-image {
+  display: block;
   position: relative;
   isolation: isolate;
   aspect-ratio: 1.8;

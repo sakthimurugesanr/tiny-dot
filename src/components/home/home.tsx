@@ -17,7 +17,11 @@ export default function Home() {
       <HeroShowcase />
       <StudioStats />
       <section className="section services-section home-services" id="services">
-        <div className="section-heading faded-section-intro">
+        <Link
+          href="/services"
+          className="section-heading faded-section-intro"
+          aria-label="Explore all miniature services"
+        >
           <div className="section-intro-photo" aria-hidden="true">
             <Image
               src="/images/services/home.webp"
@@ -34,7 +38,7 @@ export default function Home() {
               Plenty of possibility.
             </h2>
           </div>
-        </div>
+        </Link>
         <ServiceGrid
           compact
           items={services.filter((service) =>

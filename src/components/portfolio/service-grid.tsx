@@ -33,8 +33,21 @@ export const ServiceCard = memo(function ServiceCard({
 }) {
   const Icon = icons[service.icon];
   return (
-    <article className="service-card visual-service-card">
-      <div className="service-card-image">
+    <article
+      className={`service-card visual-service-card${compact ? " service-card-compact" : ""}`}
+    >
+      {compact && (
+        <Link
+          className="service-card-surface-link"
+          href={"/services?category=" + service.category}
+          aria-label={`Explore ${service.name}`}
+        />
+      )}
+      <Link
+        className="service-card-image"
+        href={"/services?category=" + service.category}
+        aria-label={`Explore ${service.name}`}
+      >
         <Image
           src={service.image}
           alt={service.imageAlt}
@@ -44,7 +57,7 @@ export const ServiceCard = memo(function ServiceCard({
         <span className="service-icon">
           <Icon size={24} strokeWidth={1.5} />
         </span>
-      </div>
+      </Link>
       <div className="service-copy">
         <span className="service-purpose">{service.purpose}</span>
         <h3>{service.name}</h3>
